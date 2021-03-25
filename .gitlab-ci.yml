@@ -1,0 +1,44 @@
+buildTests:
+   stage: build
+   script:
+      - make testPaper
+   artifacts:
+      paths:
+         - testPaper
+
+memory-leaks:
+   stage: test
+   script:
+      - make memcheck-test
+
+staticAnalysis:
+   stage: test
+   script:
+      - make static
+   only:
+      - master
+
+styleChecking:
+   stage: test
+   script:
+      - make style
+   only:
+      - master
+
+coverage:
+   stage: test
+   script:
+      - make coverage
+   artifacts:
+      paths:
+         - coverage
+      expire_in: 14 days
+
+docs:
+   stage: deploy
+   script:
+      - make docs
+   artifacts:
+      paths:
+         - docs
+      expire_in: 14 days
