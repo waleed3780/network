@@ -1,4 +1,4 @@
-PROGRAM_TEST = testPaper
+PROGRAM_TEST = testNetwork
 
 CXX=g++
 CXXFLAGS= -std=c++11 -g -fprofile-arcs -ftest-coverage

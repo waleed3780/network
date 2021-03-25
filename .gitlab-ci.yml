@@ -1,10 +1,10 @@
 buildTests:
    stage: build
    script:
-      - make testPaper
+      - make network
    artifacts:
       paths:
-         - testPaper
+         - testNetwork
 
 memory-leaks:
    stage: test
